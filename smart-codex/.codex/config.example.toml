@@ -1,0 +1,32 @@
+# SmartCodex 最小示例配置（可直接复制为 config.toml）
+# 注意：该示例不包含任何个人路径、邮箱、token
+
+# 基础模型
+model = "gpt-5-codex"
+
+# 需要时才请求权限
+ask_for_approval = "on-request"
+
+# 允许写工作区，不允许写系统目录
+sandbox = "workspace-write"
+
+# MCP 服务器（可选）
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+startup_timeout_sec = 90
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["-y", "@playwright/mcp@latest"]
+startup_timeout_sec = 120
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
+startup_timeout_sec = 120
+
+# 说明：如无需 MCP，可删除对应段落
+# 说明：如需代理或企业网络，请在外层环境变量配置
+# 说明：不要把密钥写入此文件
+# 说明：仅保留通用字段，保持可开源
+
