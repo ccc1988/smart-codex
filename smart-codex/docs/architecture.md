@@ -1,4 +1,4 @@
-# SmartCodex 架构说明
+# SmartCodex 架构说明（v2.0.0 入口系统）
 
 本文件说明 SmartCodex 的组成与协作方式。
 
@@ -11,29 +11,25 @@
 1) AGENTS
 - 全局行为规范
 - 约束输出风格与安全边界
+- 仅在入口触发时生效（go:/quote:/fix:/ship:/learn:）
 
 2) Skills
 - 把“做法”固化为流程
-- 适合重复性任务（计划、评审、验证）
+- 入口触发时执行对应技能
 
-3) Prompts
-- 面向具体场景的模板
-- 适合不同受众（业务/开发/管理）
+3) KB
+- learn 入口写入的轻量复盘知识库
+- 默认文件：`~/.codex/kb/one-man-playbook.md`
 
-4) Config
-- 最小可用配置示例
-- 可选 MCP 服务器定义
+4) Install
+- 模板化安装
+- 自动备份与可回滚
 
 ## 协作方式
-- 用户输入需求
+- 用户输入入口指令
 - Skill 负责“怎么做”
-- Prompt 负责“怎么说”
 - AGENTS 负责“怎么守规矩”
-
-## 版本化建议
-- 每次修改记录到变更日志
-- 保持技能与提示的兼容性
-- 重要规则变更需同步到 README
+- learn 负责“怎么沉淀”
 
 ## 设计原则
 - 小步、可验证
@@ -41,7 +37,7 @@
 - 避免主观与夸大
 
 ## 典型流程
-- plan → change → verify → summarize
-- review → fix → verify → merge
+- go → change → verify → deliver
+- fix → verify → summarize
 - ship → checklist → rollback
-
+- learn → append → reuse
