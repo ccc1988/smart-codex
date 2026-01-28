@@ -13,11 +13,14 @@
 - 因为 Codex 对 GPT Plus 用户友好，我们更希望降低他们的学习门槛，把这套经验和安装过程公开成项目，让大家一起享受免费的生产力；如果有侵权疑问，请直接联系我，我会处理或下架。  
 - 这个开源只是起点，欢迎给星星、提供反馈，让我们有动力持续维护，把更好用的工具分享出去。
 
-## 3. 30 秒配置
-1. `git clone https://github.com/ccc1988/smart-codex && cd smart-codex`  
-2. `bash install.sh` —— 实现模板同步、`~/.codex/superpowers` 的 clone/pull、AGENTS/skills 的覆盖（可通过 `TARGET_DIR` 指定别的 `.codex` 目录）；一条命令就完成全部依赖。  
-3. 打开 Codex，先用核心 5 个入口；需要系统能力再用 `sp:` 前缀，所有照抄示例直接贴就能运行。  
-4. `docs/SUPERPOWERS.md` 记录了 upstream 链接、反馈地址和使用方式，遇到 Superpowers 自身问题请访问 `https://github.com/obra/superpowers` 报告。
+## 3. 30 秒配置（照着做即可）
+1. 在终端执行 `git clone https://github.com/ccc1988/smart-codex && cd smart-codex`，准备好模板与脚本。  
+2. 运行 `mkdir -p ~/.codex && touch ~/.codex/.gitkeep`（保证 codex 目录存在），然后 `cd $(pwd)` 回到项目目录。  
+3. 执行 `bash install.sh`：它会备份目标 `.codex`、复制 `templates/codex`、并自动 clone/pull `https://github.com/obra/superpowers` 到 `~/.codex/superpowers`（如需其他目录，设置 `TARGET_DIR=/path/.codex`）。  
+4. 安装完成后进入 `~/.codex`，确认 `AGENTS.md`、`skills`、`superpowers` 三个目录都能看到新内容：`ls ~/.codex`。  
+5. 启动 Codex 会话，先用 `go:`/`fix:`/`quote:`/`ship:`/`learn:` 处理普通任务，再在需要系统方法论时输入 `sp:` 相关命令。  
+6. 立即在 Codex 中粘贴任意照抄示例（如 `go: 给我一个 3 步计划…` 或 `sp: use writing-plans …`）验证流程是否触发，有输出即表示可用。  
+7. 遇到 Superpowers 本体问题请参考 `docs/SUPERPOWERS.md`，需要上游反馈可去 `https://github.com/obra/superpowers` 提 issue，别忘了给这个项目点星以支持后续更新。
 
 ## 4. 快速入口参考
 
