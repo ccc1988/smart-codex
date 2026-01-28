@@ -1,6 +1,6 @@
 ---
 name: fix
-description: "故障修复（A：实用优先）。"
+description: "中文：故障修复入口（复现→定位→最小修复→最小验证）。EN: Repair workflow for debugging and fixing issues."
 ---
 # Skill: fix
 

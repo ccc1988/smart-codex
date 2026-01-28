@@ -1,6 +1,6 @@
 ---
 name: learn
-description: "轻量复盘入口（A：实用优先）"
+description: "中文：轻量复盘入口（沉淀经验为长期资产）。EN: Lightweight retro to capture reusable learnings."
 ---
 
 # learn — 轻量复盘入口（A：实用优先）

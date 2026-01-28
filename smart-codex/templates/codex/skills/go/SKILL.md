@@ -1,6 +1,6 @@
 ---
 name: go
-description: "通用交付总线（A：实用优先）。"
+description: "中文：通用交付总线（小步推进、可验证、可回滚）。EN: General delivery bus for getting work done safely."
 ---
 # Skill: go
 
