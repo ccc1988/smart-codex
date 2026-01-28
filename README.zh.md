@@ -4,8 +4,9 @@
 
 ## 1. 这是干什么的
 - 把 Codex 单一的对话能力升级为有节奏、有指令、有验证的生产流程。  
-- 用 `go/fix/quote/ship/learn` 处理绝大多数交付场景，把复杂、方法论驱动的任务交给 `sp` 。
+- 用 `go/fix/quote/ship/learn` 处理绝大多数交付场景，把复杂、方法论驱动的任务交给 `sp`。  
 - `sp` 实际上是调用 `~/.codex/superpowers` 的第三方 bundle，配合 `install.sh` 一键克隆/更新即可复刻你当前的中控台。  
+- 这个项目引用并包装了 `https://github.com/obra/superpowers` 提供的 Superpowers 技能集，若有版权/使用疑问请联系我处理；Superpowers 本体问题请去上游 issue。  
 - GPT Plus 用户本身就能免费用 Codex，只需运行这套脚本，就能分享免费的高级模型 + Superpowers 插件扩展，真正让 Codex 飞起来。
 
 ## 2. 背景与开源初衷
