@@ -1,6 +1,6 @@
 ---
 name: quote
-description: "报价与范围刹车（A：实用优先）。"
+description: "中文：报价与范围刹车（范围、不做事项、风险、方案A/B）。EN: Scope and pricing brake for decision making."
 ---
 # Skill: quote
 

@@ -1,6 +1,6 @@
 ---
 name: ship
-description: "交付发版材料（A：实用优先）。"
+description: "中文：交付与发版材料输出（说明、验收点、回滚方案）。EN: Shipping package for delivery and release."
 ---
 # Skill: ship
 
