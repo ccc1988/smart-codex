@@ -1,7 +1,7 @@
 # 入口模式总规则（仅入口触发）
 
 ## 触发条件（必须同时满足）
-- 仅当用户输入以 go: / quote: / fix: / ship: / learn: 开头时触发
+- 仅当用户输入以 /go、/quote、/fix、/ship 开头时触发
 - 仅在入口模式下执行：Plan → Confirm → Small change → Verify → Deliverables
 - 仅在入口模式下强制中文输出约束
 
@@ -17,11 +17,10 @@
 - 明确边界与假设，避免扩范围
 
 ## 入口模式交互与确认
-- go: 必须先给 3-7 步计划并等待一次确认后再改动
-- quote: 只给范围、工期、风险与报价建议，不做实现
-- fix: 只做最小修复与最小验证
-- ship: 只产出交付材料，不写代码
-- learn: 仅做轻量复盘，追加写入知识库
+- /go 必须先给 3-7 步计划并等待一次确认后再改动
+- /quote 只给范围、工期、风险与报价建议，不做实现
+- /fix 只做最小修复与最小验证
+- /ship 只产出交付材料，不写代码
 
 ## 入口模式执行规则（Very Important）
 - 以后任何时候，不允许只说“请稍等 / please wait”然后停住。
@@ -40,8 +39,11 @@
 
 ## 入口模式知识库
 - 若涉及架构选择、复杂调试或 SOP 定义，先查看 ~/.codex/kb/ 中相关文件
-- learn: 只追加写入 ~/.codex/kb/one-man-playbook.md
 - 关键任务完成后可建议归档到 /prompts:gkb（全局）或 /prompts:kb（项目）
 
-## 兼容性说明
-- 不再兼容旧的 /go /quote /fix /ship 写法（Codex CLI 中 / 为保留命令）
+!include /Users/landonclark/.codex/superpowers/AGENTS.md
+
+## Superpowers System
+
+<EXTREMELY_IMPORTANT>
+</EXTREMELY_IMPORTANT>
