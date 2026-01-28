@@ -7,6 +7,7 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TEMPLATE_DIR="$ROOT_DIR/templates/codex"
 TARGET_DIR="${TARGET_DIR:-$HOME/.codex}"
+SUPERPOWERS_DIR="${SUPERPOWERS_DIR:-$TARGET_DIR/superpowers}"
 FORCE=0
 DRY_RUN="${DRY_RUN:-0}"
 
@@ -132,5 +133,24 @@ while IFS= read -r -d '' src; do
   log "写入模板文件：$dest"
   install_file "$src" "$dest"
 done < <(find "$TEMPLATE_DIR" -type f -print0)
+
+sync_superpowers_bundle() {
+  if [[ "$DRY_RUN" == "1" ]]; then
+    log "[DRY_RUN] sync superpowers bundle at $SUPERPOWERS_DIR"
+    return 0
+  fi
+
+  if [[ -d "$SUPERPOWERS_DIR/.git" ]]; then
+    log "更新 superpowers bundle：$SUPERPOWERS_DIR"
+    run "cd \"$SUPERPOWERS_DIR\" && git pull --ff-only"
+    return
+  fi
+
+  log "克隆 superpowers bundle：$SUPERPOWERS_DIR"
+  run "mkdir -p \"$SUPERPOWERS_DIR\""
+  run "git clone https://github.com/obra/superpowers.git \"$SUPERPOWERS_DIR\""
+}
+
+sync_superpowers_bundle
 
 log "安装完成：$TARGET_DIR"

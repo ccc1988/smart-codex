@@ -26,3 +26,8 @@ See `docs/SUPERPOWERS.md` for the exact steps and references to the upstream doc
 2. Run `bash install.sh` to refresh templates from `~/.codex` and to seed any helpers that this repo relies on.
 3. Keep `templates/codex` in sync whenever `.codex` gets a new skill or AGENTS definition; this repo only mirrors what has been verified locally.
 4. Launch updates via `bash install.sh` before publishing a new release.
+
+## One-click Superpowers setup
+`install.sh` now handles the Superpowers bundle for `sp`. After syncing templates it clones or pulls `https://github.com/obra/superpowers` into `~/.codex/superpowers` (or `$TARGET_DIR/superpowers` when `TARGET_DIR` is overridden), so `sp: list`, `sp: brainstorm`, `sp: plan`, `sp: exec`, `sp: use …` all have real skills behind them. Use this repo to learn how a multi-skill Super Codex can boost GPT Plus free quota usage even without Claude CLI / OpenCode—and to share that knowledge with new collaborators.
+
+If there are any concerns about using the upstream bundle, contact me directly so I can address or remove content. For issues with the Superpowers project itself, file them at https://github.com/obra/superpowers.

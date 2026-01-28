@@ -26,3 +26,8 @@
 2. 运行 `bash install.sh` 补全 `templates/codex` 并确保依赖的助理脚本生效。
 3. 每次 `.codex` 脚本或 AGENTS.md 更新后都重跑安装脚本，让仓库保持同步。
 4. 准备发布前，再一次执行 `bash install.sh` 作为版本边界。
+
+## 一键 Superpowers 安装
+`install.sh` 会在同步模版完成后自动克隆或更新 `https://github.com/obra/superpowers` 到 `~/.codex/superpowers`（或者在 `TARGET_DIR` 指定的路径下的 `superpowers`）。这样 `sp: list`、`sp: brainstorm`、`sp: plan`、`sp: exec`、`sp: use …` 就有真实的技能链在背后，等于给 GPT Plus 免费额度搭建了一个多技能、傻瓜式的超级 Codex，降低学习门槛、提高效率。我们的目标是把这套实践分享给大家，让更多人拿到手就能用；如果你发现任何版权或侵权问题，请直接联系我处理。
+
+如需反馈 Superpowers 本体的问题，请前往 https://github.com/obra/superpowers。
