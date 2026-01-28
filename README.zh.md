@@ -1,9 +1,18 @@
 # SmartCodex 使用说明
 
-本文档按三大块拆解 SmartCodex v2 的实际入口，在结尾给出一句话口径，便于照抄无需解释。每个表格都配中午注释（带“照抄示例”），直接复制即可使用。
+**SmartCodex = 小步可靠的 5 个入口 + 一个生产级 `sp` + 原生 Codex 的自由探索。按照下面的结构复制粘贴即可开始，不需要额外解释。**
+
+---
+
+## 快速启动（傻瓜式体验）
+1. `git clone https://github.com/ccc1988/smart-codex && cd smart-codex`
+2. `bash install.sh` —— 同步 `templates/codex`，自动 clone/pull `https://github.com/obra/superpowers`，把 `sp` 入口背后的 Superpowers bundle 安装到 `~/.codex/superpowers`（可通过 `TARGET_DIR` 覆盖路径）；
+3. 打开 Codex 会话，先用 `go:`/`fix:`/`quote:`/`ship:`/`learn:` 处理大部分场景，再在需要方法论时显式输入 `sp:`；
+4. `docs/SUPERPOWERS.md` 里有详细的 upstream 链接、issue 报告和侵权说明，若有问题请联系我或去 `https://github.com/obra/superpowers` 反馈。
+
+---
 
 ## 一、SmartCodex v2 核心 5 个入口（90% 日常工作）
-
 > 适用：交付、开发、修 bug、报价、复盘  
 > 原则：**先用这 5 个，别一上来就 sp**
 
@@ -15,25 +24,21 @@
 |`ship:`|交付/发版输出|需要交付物、PR 说明/发版材料|`ship: 输出本次修改的交付说明、验收点和回滚方案`|
 |`learn:`|轻量复盘沉淀|一天结束、阶段总结、经验复用|`learn: 复盘今天的改造，总结可复用经验`|
 
-**使用建议**
-
-- 能用 `go/fix/quote/ship/learn` 解决的，**不要用 sp**，5 个入口是 SmartCodex 的主干能力。  
-- 表格一行即是真实的调用，照抄示例直接贴进 Codex 即可跑起工作流。
+- `go/fix/quote/ship/learn` 是 SmartCodex 的主干能力，能用就不要去打扰 `sp`；
+- 表格中的例子直接复制贴到 Codex，会触发工作流，不需要额外说明；
+- 只要任务有明确交付目标，优先选择这五个入口并坚持“先给计划，后执行，再验证”。
 
 ## 二、Superpowers：`sp` 入口（生产级方法论，按需启用）
-
 > 适用：复杂工程、系统化调试、方法论驱动开发  
-> 原则：**sp = 显式进入，不自动接管**
+> 原则：**`sp` ＝ 显式进入，不自动接管**
 
-### 基本用法规则
-
+### 使用规则
 ```
 sp: use <skill-name> <你的任务描述>
 ```
 
-### 常用 sp 技能清单（推荐掌握的）
-
-|sp 技能|作用说明（中文）|什么时候用|照抄示例|
+### 常用 sp 技能（照抄即可）
+|sp 技能|作用说明|什么时候用|照抄示例|
 |---|---|---|---|
 |`systematic-debugging`|系统化定位 bug（假设→验证）|诡异 bug / 多因素问题|`sp: use systematic-debugging 这个 bug 只在生产环境出现`|
 |`test-driven-development`|TDD 驱动开发|核心逻辑 / 可测试模块|`sp: use test-driven-development 实现用户权限校验`|
@@ -45,36 +50,30 @@ sp: use <skill-name> <你的任务描述>
 |`using-git-worktrees`|多分支并行开发|同时做多件事|`sp: use using-git-worktrees 并行开发两个功能`|
 |`subagent-driven-development`|子代理并行|复杂系统拆分|`sp: use subagent-driven-development 拆分并行实现`|
 
-**sp 使用铁律**
-
-- ❌ 简单改动不用 sp  
-- ❌ 问答/解释不用 sp  
-- ✅ 方法论升级才用 sp  
-- ✅ 用完就退回核心 5 个入口或原生 Codex  
+- ❌ 简单改动/问答不用 `sp`；  
+- ✅ 方法论升级、系统性拆解、多个子任务的协同才显式调用 `sp`；  
+- ✅ 用完 `sp` 之后再回到核心 5 个入口或原生 Codex，别让它常驻。
 
 ## 三、原生 Codex（不加前缀）
-
 > 适用：解释、查询、快速想法  
 > 原则：**不用入口 = 不触发任何工作流**
 
 |用法|说明|示例|
 |---|---|---|
 |直接输入自然语言|纯问答 / 解释|`解释一下 git rebase`|
-|快速想法/讨论|不需要交付结构|`这个设计思路有什么问题？`|
+|快速想法 / 讨论|不需要交付结构|`这个设计思路有什么问题？`|
 
-**提醒**
-
-- 原生 Codex = **不保证交付、不保证验证**  
-- 一旦进入“要做事”，立刻切换到 `go:` 或其它入口
+- 原生 Codex = **不保证交付、不保证验证**；  
+- 一旦进入“要做事”，立刻切换到 `go:`/`fix:`/`quote:`/`ship:`/`learn:`。
 
 ## 四、一句话总用法（对外口径）
+> 不用前缀 → 原生 Codex  
+> 要交付 → 核心 5 个入口  
+> 要方法论 → 显式 `sp`
 
-> **不用前缀 → 原生 Codex**  
-> **要交付 → 用核心 5 个入口**  
-> **要方法论 → 显式用 sp**
+---
 
-## 附：一键 Superpowers 和安装
-
-- `install.sh` 同步 `templates/codex` 后会自动 clone/pull `https://github.com/obra/superpowers` 到 `~/.codex/superpowers`，让 `sp: list/brainstorm/plan/exec/use` 直接可用。  
-- 详细流程见 `docs/SUPERPOWERS.md`，若对 upstream 有疑问请向 https://github.com/obra/superpowers 反馈。
-
+## 附：Superpowers 声明与反馈
+- `install.sh` 包含一键同步 Superpowers 的逻辑，克隆/更新会写入 `~/.codex/superpowers`，让 `sp: list/brainstorm/plan/exec/use` 直接可用；想了解细节请看 `docs/SUPERPOWERS.md`。  
+- 本项目旨在降低学习成本，免费分享多技能 Super Codex，如果你发现任何版权/侵权问题请先联系我处理；Superpowers 本体的问题欢迎在 `https://github.com/obra/superpowers` 提交 issue。  
+- 使用过程中如有疑问，优先用表格里提供的“照抄示例”，如果仍有问题再参考 `docs/SUPERPOWERS.md` 或发起社区讨论。
