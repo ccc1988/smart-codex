@@ -17,6 +17,10 @@
 ## sp Positioning
 `sp` is the production-grade portal into SmartCodex’s Superpowers bundle. Think of it as the curated concierge—`sp` can trigger broader skill chains, surface extra templates, and enforce the discipline of plan/verify/deliver without the noise of ad-hoc prompts.
 
+### Superpowers integration
+The `sp` entry matches the third-party Superpowers bundle inside `~/.codex/superpowers`. Cloning `https://github.com/obra/superpowers` into that location, then running the bundled `superpowers-codex` CLI (`bootstrap`, `find-skills`, `use-skill`, etc.) activates every invocation pattern (`sp: list`, `sp: brainstorm`, `sp: plan`, `sp: exec`, `sp: use …`).
+See `docs/SUPERPOWERS.md` for the exact steps and references to the upstream documentation.
+
 ## Installation
 1. Clone the repo and open it inside a Codex-friendly workspace.
 2. Run `bash install.sh` to refresh templates from `~/.codex` and to seed any helpers that this repo relies on.

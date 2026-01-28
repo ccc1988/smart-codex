@@ -17,6 +17,10 @@
 ## sp 定位
 `sp` 是 SmartCodex Superpowers 的生产级门户，类似礼宾服务：它能牵引更复杂的技能组合、暴露额外模板，并用 plan/verify/deliver 这套格式保持流程纪律。
 
+### Superpowers 集成
+`sp` 入口关联的是 `~/.codex/superpowers` 目录中的第三方 Superpowers bundle。把 https://github.com/obra/superpowers 克隆到该位置，然后运行捆绑的 `superpowers-codex` CLI（`bootstrap`、`find-skills`、`use-skill` 等）就能激活 `sp: list`、`sp: brainstorm`、`sp: plan`、`sp: exec`、`sp: use ...` 等调用模式。
+参见 `docs/SUPERPOWERS.md` 了解具体步骤与上游文档链接。
+
 ## 安装
 1. 把仓库 clone 到 Codex 可用的工作目录。
 2. 运行 `bash install.sh` 补全 `templates/codex` 并确保依赖的助理脚本生效。
